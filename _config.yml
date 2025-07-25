@@ -26,8 +26,6 @@ author:
   name             : "Jack Mulqueeney"
   pronouns         : # example: "she/her"  
   bio              : "Pre-doc at UChicago"
-  location         : "Chicago"
-  employer         : "University of Chicago"
   uri              : # URL
   email            : "jmulqueeney@uchicago.edu"
 
@@ -85,6 +83,12 @@ publication_category:
     title: 'Articles'    
   conferences:
     title: 'Conference Papers'
+  theses:
+    title: 'Theses'
+  working_papers:
+    title: 'Working papers'
+  policy_papers:
+    title: 'Policy Papers'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
