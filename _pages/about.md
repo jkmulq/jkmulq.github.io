@@ -7,4 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-I currently work for [Prof. Evan K. Rose](https://ekrose.github.io/) at the [Becker-Friedman Institute](https://bfi.uchicago.edu/) at the University of Chicago. Before coming to Chicago, I worked at the Reserve Bank of Australia. You view my CV [here](jkmulq.github.io/files/CV.pdf).
+I currently work for [Prof. Evan K. Rose](https://ekrose.github.io/) at the [Becker-Friedman Institute](https://bfi.uchicago.edu/) at the University of Chicago. Before coming to Chicago, I worked at the Reserve Bank of Australia. You view my CV [here](https://jkmulq.github.io/files/CV.pdf).
