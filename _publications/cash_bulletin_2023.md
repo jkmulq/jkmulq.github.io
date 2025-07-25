@@ -2,6 +2,7 @@
 title: "Cash Use and Attitudes in Australia"
 collection: publications
 category: policy_papers
+venue: RBA Bulletin
 excerpt: 'This article explores the results from the 2022 Consumer Payments Survey (CPS) as they relate to cash.'
 date: 2025-04-24
 paperurl: 'https://www.rba.gov.au/publications/bulletin/2023/jun/cash-use-and-attitudes-in-australia.html'

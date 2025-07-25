@@ -2,6 +2,7 @@
 title: "The Evolution of Consumer Payments in Australia: Results from the 2022 Consumer Payments Survey"
 collection: publications
 category: working_papers
+venue: RBA Working Paper Series
 excerpt: 'This paper discusses and analyses the results from the Reserve Bank of Australia`s (RBA) Consumer Payments Survey (CPS), which is a large-scale, population representative survey about Australian consumer payment behaviour.'
 date: 2023-11-01
 paperurl: 'https://www.rba.gov.au/publications/rdp/2023/pdf/rdp2023-08.pdf'

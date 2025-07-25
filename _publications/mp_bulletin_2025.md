@@ -2,6 +2,7 @@
 title: "Monetary Policy Transmission through the Lens of the RBA's Models"
 collection: publications
 category: policy_papers
+venue: RBA Bulletin
 excerpt: 'This article explains how the monetary policy transmission mechanism works in the RBA`s DSGE and macro-econometric models. We also benchmark those models` IRFs against non-RBA models.'
 date: 2025-04-24
 paperurl: 'https://www.rba.gov.au/publications/bulletin/2025/apr/monetary-policy-transmission-through-the-lens-of-the-rbas-models.html'

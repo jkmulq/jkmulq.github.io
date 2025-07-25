@@ -2,6 +2,7 @@
 title: "Valuing Safety and Privacy in Retail Central Bank Digital Currency "
 collection: publications
 category: working_papers
+venue: RBA Working Paper Series
 excerpt: 'This paper uses a discrete choice experiment, a technique designed specifically for assessing public valuations of goods without markets, to explore the merits of introducing a retail central bank digital currency (CBDC) in Australia.'
 date: 2024-04-01
 paperurl: 'https://www.rba.gov.au/publications/rdp/2024/pdf/rdp2024-02.pdf'
