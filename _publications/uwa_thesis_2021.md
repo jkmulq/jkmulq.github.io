@@ -3,7 +3,7 @@ title: "The Strong, the Weak, and the Robust: Inference and Estimation in Weakly
 collection: publications
 category: manuscripts
 excerpt: 'This paper proposes a hypothesis test that is robust to the presence of weak instruments in binary outcome panel data. \n This was my undergraduate thesis completed in my final year of study at the University of Western Australia.'
-date: 2021-10
+date: 2021-10-01
 paperurl: 'https://jkmulq.github.io/files/UWA_thesis.pdf'
 ---
 I propose a hypothesis test that is robust to the presence of weak instruments in binary outcome panel data. The test relies on a conditional maximum likelihood procedure, the conditional logit, to consistently estimate reduced-form parameters. Based on a distance function that relates reduced- and structural-form parameters, the test has the correct size regardless of instrument strength while standard Wald tests over-reject by up to 100% when

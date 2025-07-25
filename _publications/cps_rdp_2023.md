@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 permalink: https://www.rba.gov.au/publications/rdp/2023/2023-08.html
 excerpt: 'This paper discusses and analyses the results from the Reserve Bank of Australia`s (RBA) Consumer Payments Survey (CPS), which is a large-scale, population representative survey about Australian consumer payment behaviour.'
-date: 2023-11
+date: 2023-11-01
 paperurl: 'https://www.rba.gov.au/publications/rdp/2023/pdf/rdp2023-08.pdf'
 
 ---
