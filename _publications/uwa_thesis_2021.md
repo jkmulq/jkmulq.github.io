@@ -1,7 +1,7 @@
 ---
 title: "The Strong, the Weak, and the Robust: Inference and Estimation in Weakly Identified Panel Binary Dependent Variable Models"
 collection: publications
-category: theses
+category: manuscripts
 excerpt: 'This paper proposes a hypothesis test that is robust to the presence of weak instruments in binary outcome panel data. \n This was my undergraduate thesis completed in my final year of study at the University of Western Australia.'
 date: 2021-10-01
 paperurl: 'https://jkmulq.github.io/files/UWA_thesis.pdf'
