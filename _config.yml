@@ -24,11 +24,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Jack Mulqueeney"
-  pronouns         : # example: "she/her"  
   bio              : "Pre-doc at UChicago"
-  location         : "Chicago"
-  employer         : "University of Chicago"
-  uri              : # URL
   email            : "jmulqueeney@uchicago.edu"
 
   # Academic websites
@@ -82,7 +78,9 @@ publication_category:
   books:
     title: 'Books'
   manuscripts:
-    title: 'Articles'    
+    title: 'Articles' 
+  theses:
+    title: 'Theses'   
   conferences:
     title: 'Conference Papers'
 

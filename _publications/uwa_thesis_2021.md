@@ -1,9 +1,8 @@
 ---
 title: "The Strong, the Weak, and the Robust: Inference and Estimation in Weakly Identified Panel Binary Dependent Variable Models"
 collection: publications
-category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper proposes a framework to conduct correctly sized inference in weakly identified models in the panel data setting with a binary dependent variable.'
+category: theses
+excerpt: 'This paper proposes a framework to conduct correctly sized inference in weakly identified models in the panel data setting with a binary dependent variable. This was my undergraduate thesis completed in my final year of study at the University of Western Australia.'
 date: 2021-10-01
 paperurl: 'jkmulq.github.io/files/Thesis_quick.pdf'
 ---
