@@ -24,9 +24,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Jack Mulqueeney"
-  pronouns         : # example: "she/her"  
   bio              : "Pre-doc at UChicago"
-  uri              : # URL
   email            : "jmulqueeney@uchicago.edu"
 
   # Academic websites
@@ -89,6 +87,8 @@ publication_category:
     title: 'Working papers'
   policy_papers:
     title: 'Policy Papers'
+  other:
+    title: 'Other Publications'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -137,7 +137,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : 
 facebook:
   username               :
   app_id                 :

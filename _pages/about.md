@@ -9,4 +9,4 @@ redirect_from:
 
 I currently work for [Prof. Evan K. Rose](https://ekrose.github.io/) at the [Becker-Friedman Institute](https://bfi.uchicago.edu/) at the University of Chicago. Before coming to Chicago, I worked at the Reserve Bank of Australia. 
 \\
-You view my CV [here](https://jkmulq.github.io/files/Jack_Mulqueeney_CV.pdf). I am interested in... 
+You view my CV [here](https://jkmulq.github.io/files/Jack_Mulqueeney_CV.pdf).

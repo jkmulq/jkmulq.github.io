@@ -1,8 +1,7 @@
 ---
 title: "Stochastic Modelling of Deterministic Systems"
 collection: publications
-category: manuscripts
-permalink: /publication/amsi_project_2021
+category: other
 excerpt: 'I used the Kramers-Moyal expansion and the theory of stochastic resonance to model complex deterministic systems. This paper was written for a summer research internship with the Australian Insitute for Mathematical Sciences (AMSI), and was supervised by Dr. Thomas Stemler at the University of Western Australia.'
 date: 2021-01-01
 paperurl: 'https://srs.amsi.org.au/wp-content/uploads/sites/92/2021/01/mulqueeney_jack_vrs-report.pdf'
