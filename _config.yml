@@ -236,8 +236,10 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - assets/jupyter/
   - gems/
   - migrations/
+  - test/
   - vendor
 keep_files:
   - CNAME
@@ -423,7 +425,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # requires ImageMagick's `convert`; keep disabled for a minimal local build
   widths:
     - 480
     - 800
