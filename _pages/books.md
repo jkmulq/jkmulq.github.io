@@ -2,7 +2,8 @@
 layout: page
 title: books
 permalink: /things-i-like/books/
-description: Reading highlights from my books spreadsheet.
+description: sometimes i read books, most of the time fiction. 
+
 nav: false
 ---
 
@@ -16,8 +17,7 @@ nav: false
 
 <section class="things-books-page">
   <p>
-    A rebuild-time snapshot of the books I have tracked in Google Sheets. Ratings are grouped into
-    half-star bins, and the top five are linked to Wikipedia when a matching page is found.
+    i enjoy reading fiction. couple of fiction hot takes. firstly, i think it's ok when a movie adaptation significantly departs from the original book. i think that holds for the narrative, the characterisation, and sometimes the themes. reinterpret the text for me, don't show me how you think it should look like. secondly, i agree that the shorter the better (not controversial). maybe controversial: to justify extra length, you need to add more-than-proportional quality to make me want to read it. e.g. book A is twice the length of book B. book A needs to be more than twice as good as book B. 
   </p>
 
   <p class="things-books-status">{{ books_data.status }}</p>
