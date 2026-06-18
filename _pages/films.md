@@ -1,9 +1,9 @@
 ---
 layout: page
 title: films
-permalink: /films/
+permalink: /things-i-like/films/
 description: Letterboxd rating highlights.
-nav: true
+nav: false
 nav_order: 3
 ---
 

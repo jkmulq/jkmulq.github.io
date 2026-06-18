@@ -82,6 +82,11 @@ al_folio:
 letterboxd:
   username: jmmulq
 
+things_i_like:
+  books:
+    google_sheet_id: 1-WumeVVLAfD3rJRlSWN99hr_qH2JrEEYMMlhwHA2EdI
+    gid: 0
+
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
