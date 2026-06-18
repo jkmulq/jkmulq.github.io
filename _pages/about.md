@@ -6,7 +6,7 @@ subtitle: Research Professional, Becker Friedman Institute at the University of 
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: headshot.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Chicago, USA</p>
@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a quantitative economist and pre-doctoral researcher at the Becker Friedman Institute at the University of Chicago, where I work with Prof. Evan Rose. My research interests are in applied econometrics, causal inference, labor economics, and macroeconomic policy.
+I am a pre-doctoral researcher at the Becker-Friedman Institute at the University of Chicago, where I work with Prof. Evan Rose. My research interests are in applied econometrics, labor economics, and empirical macroeconomics.
 
 Before joining the University of Chicago, I spent three years at the Reserve Bank of Australia, where I worked on macroeconomic modelling, monetary policy analysis, banknote policy, and consumer payments research. I helped develop and maintain MARTIN, the RBA's main macroeconometric model, and contributed to research on cash use, central bank digital currency, and monetary policy transmission.
 
