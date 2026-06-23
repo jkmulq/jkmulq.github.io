@@ -1,0 +1,205 @@
+/*******************************************************************************
+ * Site palette: inspired by the graphic stage, blue rails, yellow strip,
+ * black field, white figure, and red flashes in Henri Matisse's Jazz cutouts.
+ ******************************************************************************/
+
+:root {
+  --jkm-paper: #f3dfaa;
+  --jkm-cream: #fff5cc;
+  --jkm-field: #11131f;
+  --jkm-ink: #17130f;
+  --jkm-muted: #786d56;
+  --jkm-blue: #0d5ca8;
+  --jkm-blue-deep: #093f78;
+  --jkm-yellow: #fff019;
+  --jkm-red: #ef2e22;
+  --jkm-white: #fff8e8;
+
+  --global-bg-color: var(--jkm-cream);
+  --global-code-bg-color: color-mix(in srgb, var(--jkm-yellow) 22%, transparent);
+  --global-text-color: var(--jkm-ink);
+  --global-text-color-light: var(--jkm-muted);
+  --global-theme-color: var(--jkm-blue);
+  --global-hover-color: var(--jkm-red);
+  --global-hover-text-color: var(--jkm-paper);
+  --global-footer-bg-color: var(--jkm-ink);
+  --global-footer-text-color: var(--jkm-cream);
+  --global-footer-link-color: var(--jkm-yellow);
+  --global-divider-color: color-mix(in srgb, var(--jkm-ink) 16%, transparent);
+  --global-card-bg-color: var(--jkm-white);
+  --global-highlight-color: var(--jkm-red);
+  --global-newsletter-bg-color: var(--jkm-white);
+  --global-newsletter-text-color: var(--jkm-ink);
+}
+
+html[data-theme="dark"] {
+  --jkm-paper: #0b0d16;
+  --jkm-cream: #11131f;
+  --jkm-field: #080910;
+  --jkm-ink: #fff5cc;
+  --jkm-muted: #d4c99f;
+  --jkm-blue: #2f7fd0;
+  --jkm-blue-deep: #75aef3;
+  --jkm-yellow: #fff019;
+  --jkm-red: #ff4938;
+  --jkm-white: #181b2a;
+
+  --global-bg-color: var(--jkm-paper);
+  --global-code-bg-color: color-mix(in srgb, var(--jkm-blue) 18%, transparent);
+  --global-text-color: var(--jkm-ink);
+  --global-text-color-light: var(--jkm-muted);
+  --global-theme-color: var(--jkm-yellow);
+  --global-hover-color: var(--jkm-red);
+  --global-hover-text-color: #17130f;
+  --global-footer-bg-color: #090705;
+  --global-footer-text-color: var(--jkm-muted);
+  --global-footer-link-color: var(--jkm-yellow);
+  --global-divider-color: color-mix(in srgb, var(--jkm-ink) 18%, transparent);
+  --global-card-bg-color: #211a13;
+  --global-highlight-color: var(--jkm-red);
+}
+
+body {
+  background:
+    linear-gradient(90deg, transparent 0 78%, color-mix(in srgb, var(--jkm-red) 68%, transparent) 78% 79.2%, transparent 79.2%),
+    linear-gradient(90deg, transparent 0 12%, color-mix(in srgb, var(--jkm-yellow) 55%, transparent) 12% 13.5%, transparent 13.5%),
+    linear-gradient(180deg, var(--jkm-blue) 0 0.55rem, transparent 0.55rem),
+    linear-gradient(180deg, var(--global-bg-color), var(--jkm-paper));
+}
+
+a,
+table.table a {
+  color: var(--global-theme-color);
+  text-decoration-color: color-mix(in srgb, var(--jkm-red) 55%, transparent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover,
+table.table a:hover {
+  color: var(--global-hover-color);
+}
+
+.navbar {
+  backdrop-filter: none;
+  background-color: var(--jkm-field);
+  border-bottom: 0.35rem solid var(--jkm-yellow);
+}
+
+.navbar.navbar-light a,
+.navbar.navbar-light .navbar-brand,
+.navbar.navbar-light .navbar-nav .nav-item .nav-link,
+#light-toggle,
+#search-toggle {
+  color: var(--jkm-white);
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  background: var(--jkm-yellow);
+  color: var(--jkm-ink);
+  transform: none;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
+  color: var(--jkm-yellow);
+}
+
+h1,
+h2,
+h3,
+.post-title,
+.publications h2,
+.header-bar h1 {
+  color: var(--jkm-field);
+}
+
+h1::before,
+h2::before {
+  color: var(--jkm-red);
+  content: "";
+  display: inline-block;
+  width: 0.18em;
+  height: 0.82em;
+  margin-right: 0.22em;
+  background: var(--jkm-red);
+  transform: skew(-8deg);
+  vertical-align: -0.08em;
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+p::selection,
+a::selection,
+li::selection {
+  background: var(--jkm-yellow);
+  color: #17130f;
+}
+
+.profile img,
+.card,
+.publication,
+.things-books-panel,
+.letterboxd-panel {
+  box-shadow:
+    0.35rem 0.35rem 0 var(--jkm-blue),
+    0.7rem 0.7rem 0 color-mix(in srgb, var(--jkm-red) 76%, transparent);
+}
+
+.profile img {
+  border: 0.35rem solid var(--jkm-yellow);
+}
+
+.profile .more-info,
+.profile .more-info a {
+  overflow-wrap: anywhere;
+}
+
+.card,
+.things-books-panel,
+.letterboxd-panel {
+  border: 0.12rem solid var(--jkm-field) !important;
+  background: var(--global-card-bg-color);
+}
+
+.badge,
+.btn,
+.btn-primary,
+.page-link.active,
+.pagination .active .page-link {
+  border-color: var(--jkm-blue) !important;
+}
+
+.btn-primary,
+.page-link.active,
+.pagination .active .page-link {
+  background: var(--jkm-blue) !important;
+  color: var(--jkm-white) !important;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background: var(--jkm-red) !important;
+  border-color: var(--jkm-red) !important;
+  color: var(--jkm-white) !important;
+}
+
+.publications ol.bibliography li .abbr abbr,
+.publications ol.bibliography li .abbr .badge {
+  background: var(--jkm-red) !important;
+  color: var(--jkm-white) !important;
+}
+
+.letterboxd-histogram [style],
+.things-books-bin-bar {
+  background-color: var(--jkm-blue) !important;
+}
+
+.letterboxd-movie-grid a,
+.things-books-page a {
+  color: var(--jkm-blue);
+}
+
+footer.fixed-bottom {
+  border-top: 0.42rem solid var(--jkm-red);
+}
