@@ -2,29 +2,27 @@
 layout: page
 title: films
 permalink: /things-i-like/films/
-description: Letterboxd rating highlights.
+description: i like movies, i wish i watched more
 nav: false
 nav_order: 3
 ---
 
 <section class="letterboxd-page" data-letterboxd-username="{{ site.letterboxd.username }}">
   <p>
-    A small window into my Letterboxd account, pulled from the public RSS snapshot for
-    <a href="https://letterboxd.com/{{ site.letterboxd.username }}/">letterboxd.com/{{ site.letterboxd.username }}</a>.
-    The RSS feed only exposes recent activity, so these highlights are a snapshot rather than my full rating history.
+    a small window into the films ive seen. movies peak when the filmmaker uses the medium to its fullest extent. this usually means i like movies with minimalist dialogue, otherwise id read a book. let the actors act and the camera direct your attention. 
+    
   </p>
 
   <div class="letterboxd-status" data-letterboxd-status>Loading Letterboxd highlights...</div>
 
   <div class="letterboxd-grid" hidden>
     <section class="letterboxd-panel">
-      <h2>Rating histogram</h2>
+      <h2>ratings</h2>
       <div class="letterboxd-histogram" data-letterboxd-distribution></div>
     </section>
 
     <section class="letterboxd-panel">
-      <h2>Highly rated movies</h2>
-      <p class="letterboxd-panel-note">Cards link to Wikipedia when a matching page is found.</p>
+      <h2>movies i really liked recently</h2>
       <div class="letterboxd-movie-grid" data-letterboxd-high-rated-list></div>
     </section>
   </div>
@@ -43,8 +41,8 @@ nav_order: 3
 
   .letterboxd-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
     margin-top: 1.5rem;
   }
 
@@ -70,6 +68,7 @@ nav_order: 3
     gap: 0.45rem;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     min-height: 14rem;
+    overflow: visible;
     padding-top: 1rem;
   }
 
