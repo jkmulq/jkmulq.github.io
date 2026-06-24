@@ -80,8 +80,8 @@ nav: false
 
   .things-books-grid {
     display: grid;
-    gap: 1.25rem;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
     margin-top: 1.5rem;
   }
 
@@ -101,6 +101,7 @@ nav: false
     gap: 0.45rem;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     min-height: 14rem;
+    overflow: visible;
     padding-top: 1rem;
   }
 
