@@ -67,8 +67,8 @@ body {
     linear-gradient(180deg, var(--global-bg-color), var(--jkm-paper));
 }
 
-body.fixed-top-nav {
-  padding-top: 6.75rem;
+body:not(.fixed-top-nav) {
+  padding-top: 0 !important;
 }
 
 a,
@@ -88,9 +88,15 @@ table.table a:hover {
   backdrop-filter: none;
   background-color: var(--jkm-field);
   border-bottom: 0.35rem solid var(--jkm-yellow);
+  margin-bottom: 2rem;
   min-height: 4.6rem;
   opacity: 1;
   padding: 0.45rem 0;
+}
+
+.navbar.sticky-top {
+  position: static;
+  top: auto;
 }
 
 .navbar > .container {
@@ -161,10 +167,6 @@ table.table a:hover {
 }
 
 @media (max-width: 575.98px) {
-  body.fixed-top-nav {
-    padding-top: 4.8rem;
-  }
-
   .navbar {
     min-height: 3.9rem;
   }
@@ -215,9 +217,7 @@ li::selection {
 
 .profile img,
 .card,
-.publication,
-.things-books-panel,
-.letterboxd-panel {
+.publication {
   box-shadow:
     0.35rem 0.35rem 0 var(--jkm-blue),
     0.7rem 0.7rem 0 color-mix(in srgb, var(--jkm-red) 76%, transparent);
@@ -232,9 +232,7 @@ li::selection {
   overflow-wrap: anywhere;
 }
 
-.card,
-.things-books-panel,
-.letterboxd-panel {
+.card {
   border: 0.12rem solid var(--jkm-field) !important;
   background: var(--global-card-bg-color);
 }
@@ -265,11 +263,6 @@ li::selection {
 .publications ol.bibliography li .abbr .badge {
   background: var(--jkm-red) !important;
   color: var(--jkm-white) !important;
-}
-
-.letterboxd-histogram [style],
-.things-books-bin-bar {
-  background-color: var(--jkm-blue) !important;
 }
 
 .letterboxd-movie-grid a,

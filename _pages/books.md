@@ -69,7 +69,7 @@ nav: false
 
 <style>
   .things-books-page {
-    --things-books-accent: #5c6bc0;
+    --things-books-accent: color-mix(in srgb, var(--global-text-color) 35%, transparent);
     --things-books-muted: var(--global-text-color-light);
   }
 
@@ -157,8 +157,8 @@ nav: false
 
   .things-books-cover-frame {
     aspect-ratio: 2 / 3;
-    background: var(--global-divider-color);
-    border-radius: 8px;
+    background: color-mix(in srgb, var(--global-text-color) 7%, transparent);
+    border-radius: 4px;
     display: block;
     margin-top: 0.45rem;
     overflow: hidden;

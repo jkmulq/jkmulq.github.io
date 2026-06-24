@@ -32,7 +32,7 @@ nav_order: 3
 
 <style>
   .letterboxd-page {
-    --letterboxd-accent: #00a11b;
+    --letterboxd-accent: color-mix(in srgb, var(--global-text-color) 35%, transparent);
     --letterboxd-muted: var(--global-text-color-light);
   }
 
@@ -111,8 +111,8 @@ nav_order: 3
 
   .letterboxd-poster-frame {
     aspect-ratio: 2 / 3;
-    background: var(--global-divider-color);
-    border-radius: 8px;
+    background: color-mix(in srgb, var(--global-text-color) 7%, transparent);
+    border-radius: 4px;
     display: block;
     margin-top: 0.45rem;
     overflow: hidden;
