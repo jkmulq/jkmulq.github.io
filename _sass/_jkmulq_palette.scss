@@ -326,14 +326,6 @@ th,
   border-radius: 0 !important;
 }
 
-.card img,
-.publication img,
-.img-fluid,
-.preview img,
-.post img {
-  filter: grayscale(1) contrast(1.28) brightness(1.04);
-}
-
 .card:hover,
 .publication:hover {
   border-color: color-mix(in srgb, var(--jkm-flash) 70%, transparent) !important;
