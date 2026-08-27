@@ -24,3 +24,8 @@
 @use "typograms";
 
 @use "jkmulq_palette";
+
+#progress,
+.progress-container {
+  display: none !important;
+}
