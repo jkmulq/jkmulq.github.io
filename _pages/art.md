@@ -164,6 +164,10 @@ nav: false
     flex-grow: 1.08;
   }
 
+  .art-frame.is-dekooning {
+    --art-ratio: 1.347;
+  }
+
   .art-row .art-frame {
     align-self: stretch;
     flex: var(--art-ratio) 1 0;
