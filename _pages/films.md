@@ -119,6 +119,7 @@ nav_order: 3
 
   .letterboxd-poster-frame img {
     display: block;
+    filter: none;
     height: 100%;
     object-fit: cover;
     width: 100%;

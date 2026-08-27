@@ -167,6 +167,7 @@ nav: false
 
   .things-books-cover-frame img {
     display: block;
+    filter: none;
     height: 100%;
     object-fit: cover;
     width: 100%;
