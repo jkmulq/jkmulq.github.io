@@ -71,11 +71,6 @@ nav: false
     --things-books-muted: var(--global-text-color-light);
   }
 
-  .things-books-status {
-    color: var(--things-books-muted);
-    margin: 1rem 0;
-  }
-
   .things-books-grid {
     display: grid;
     gap: 2rem;

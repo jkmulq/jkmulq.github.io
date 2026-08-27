@@ -13,8 +13,6 @@ nav_order: 3
     
   </p>
 
-  <div class="letterboxd-status" data-letterboxd-status hidden>Loading Letterboxd highlights...</div>
-
   <div class="letterboxd-grid" hidden>
     <section class="letterboxd-panel">
       <h2>ratings</h2>
@@ -32,11 +30,6 @@ nav_order: 3
   .letterboxd-page {
     --letterboxd-accent: color-mix(in srgb, var(--global-text-color) 35%, transparent);
     --letterboxd-muted: var(--global-text-color-light);
-  }
-
-  .letterboxd-status {
-    color: var(--letterboxd-muted);
-    margin: 1rem 0;
   }
 
   .letterboxd-grid {
@@ -178,7 +171,6 @@ nav_order: 3
     if (!root) return;
 
     const username = root.dataset.letterboxdUsername;
-    const status = root.querySelector("[data-letterboxd-status]");
     const grid = root.querySelector(".letterboxd-grid");
     const distributionEl = root.querySelector("[data-letterboxd-distribution]");
     const highRatedList = root.querySelector("[data-letterboxd-high-rated-list]");
@@ -343,12 +335,10 @@ nav_order: 3
         highRatedFilms.slice(0, 12).forEach((film) => appendFilmCard(highRatedList, film));
       } else {
         const empty = document.createElement("p");
-        empty.textContent = "No 4.5- or 5-star ratings appeared in the current RSS snapshot.";
+        empty.textContent = "No 4.5- or 5-star ratings are available right now.";
         highRatedList.appendChild(empty);
       }
 
-      status.textContent = "";
-      status.hidden = true;
       grid.hidden = false;
     };
 
@@ -364,8 +354,6 @@ nav_order: 3
         render(data.items);
       })
       .catch((error) => {
-        status.hidden = false;
-        status.textContent = "Could not load Letterboxd highlights right now. The public profile link above still works.";
         console.error("Letterboxd highlights failed:", error);
       });
   })();

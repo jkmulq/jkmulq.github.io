@@ -27,7 +27,6 @@ module ThingsILike
         "books" => books,
         "histogram" => histogram(rated_books),
         "top_books" => top_books,
-        "status" => status_for(books, csv_url),
       }
     rescue StandardError => e
       Jekyll.logger.warn "Things I Like:", "Could not fetch books sheet: #{e.message}"
@@ -44,7 +43,7 @@ module ThingsILike
 
     def fetch_books(csv_url)
       body = fetch_text(csv_url)
-      raise "Google Sheet returned a sign-in page. Publish the sheet to the web or provide THINGS_I_LIKE_BOOKS_CSV_URL." if body.include?("Sign in to your Google Account")
+      raise "Book source returned a sign-in page. Publish the sheet to the web or provide THINGS_I_LIKE_BOOKS_CSV_URL." if body.include?("Sign in to your Google Account")
 
       rows = CSV.parse(body, headers: true)
       rows.filter_map { |row| normalize_book(row.to_h) }
@@ -254,21 +253,12 @@ module ThingsILike
       URI.encode_www_form_component(value.to_s)
     end
 
-    def status_for(books, csv_url)
-      if books.empty?
-        "No books were loaded from #{csv_url}."
-      else
-        "Showing #{books.length} books from the Google Sheet."
-      end
-    end
-
     def empty_data(message)
       {
         "source_url" => nil,
         "books" => [],
         "histogram" => histogram([]),
         "top_books" => [],
-        "status" => "Book data is unavailable: #{message}",
       }
     end
   end
