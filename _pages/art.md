@@ -64,7 +64,7 @@ nav: false
     background-size: 5rem 5rem, 5rem 5rem, 100% 100%;
     display: flex;
     flex-direction: column;
-    gap: clamp(0.75rem, 1.3vw, 1rem);
+    gap: 0;
     margin: 2.5rem -2rem 0;
     padding: clamp(1.4rem, 3.5vw, 2.5rem);
   }
@@ -90,6 +90,7 @@ nav: false
     box-shadow: none;
     display: grid;
     justify-self: center;
+    margin: 0;
     padding: 0;
     position: relative;
   }
@@ -99,6 +100,7 @@ nav: false
     filter: contrast(1.04) saturate(0.92);
     height: 100%;
     object-fit: contain;
+    object-position: top center;
     width: 100%;
   }
 
