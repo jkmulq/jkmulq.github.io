@@ -49,12 +49,17 @@ nav: false
 
   .art-wall {
     align-items: start;
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--jkm-flash) 7%, transparent) 0 1px, transparent 1px 100%),
+      linear-gradient(180deg, color-mix(in srgb, var(--jkm-flash) 5%, transparent) 0 1px, transparent 1px 100%),
+      linear-gradient(180deg, #211f19 0%, #12110e 100%);
+    background-size: 5rem 5rem, 5rem 5rem, 100% 100%;
     display: grid;
-    gap: 3.8rem 2.8rem;
+    gap: 1.45rem 1.65rem;
     grid-auto-flow: dense;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    margin: 3.5rem -2rem 0;
-    padding: 1.6rem 2rem 3rem;
+    margin: 2.5rem -2rem 0;
+    padding: 3rem 2.4rem 3.5rem;
   }
 
   .art-frame {
@@ -64,7 +69,6 @@ nav: false
     box-shadow: none;
     display: grid;
     justify-self: center;
-    min-height: 14rem;
     padding: 0;
     position: relative;
   }
@@ -72,7 +76,7 @@ nav: false
   .art-frame img {
     display: block;
     filter: contrast(1.04) saturate(0.92);
-    height: 100%;
+    height: auto;
     object-fit: contain;
     width: 100%;
   }
@@ -115,56 +119,56 @@ nav: false
   }
 
   .art-frame.is-small {
-    grid-column: span 3;
-    height: 15rem;
-    width: 82%;
+    grid-column: span 4;
+    width: 94%;
   }
 
   .art-frame.is-medium {
     grid-column: span 4;
-    height: 21rem;
-    width: 96%;
+    margin-left: 1.25rem;
+    margin-top: -1.2rem;
+    width: 92%;
   }
 
   .art-frame.is-tall {
     grid-column: span 4;
-    height: 28rem;
-    width: 88%;
+    margin-top: -0.3rem;
+    width: 100%;
   }
 
   .art-frame.is-wide {
-    grid-column: span 7;
-    height: 18rem;
+    grid-column: span 6;
+    margin-top: 3rem;
     width: 100%;
   }
 
   .art-frame.is-large {
     grid-column: span 6;
-    height: 26rem;
-    width: 94%;
+    width: 100%;
   }
 
   .art-frame.is-bassman {
-    grid-column: span 5;
-    height: 31rem;
-    width: 92%;
+    grid-column: span 4;
+    margin-left: 0.6rem;
+    margin-top: -1rem;
+    width: 100%;
   }
 
   .art-frame.is-offset {
-    margin-top: 4rem;
+    margin-top: 1.4rem;
   }
 
   .art-frame.is-raised {
-    margin-bottom: 3rem;
+    margin-bottom: 0.8rem;
   }
 
   @media (max-width: 900px) {
     .art-wall {
-      gap: 1.6rem;
+      gap: 1.25rem;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       margin-left: 0;
       margin-right: 0;
-      padding: 0.85rem;
+      padding: 1.4rem;
     }
 
     .art-frame.is-small,
@@ -174,13 +178,11 @@ nav: false
     .art-frame.is-large,
     .art-frame.is-bassman {
       grid-column: span 3;
-      height: 19rem;
+      height: auto;
+      margin-left: 0;
       margin-bottom: 0;
       margin-top: 0;
-    }
-
-    .art-frame.is-bassman {
-      height: 25rem;
+      width: 100%;
     }
   }
 
@@ -194,6 +196,7 @@ nav: false
       height: auto !important;
       margin: 0 0 2.2rem !important;
       min-height: 0;
+      width: 100%;
     }
 
     .art-frame img {
