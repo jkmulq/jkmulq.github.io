@@ -1,0 +1,30 @@
+- image: assets/img/art/brown_blk2.jpg
+  title: Black Painting 2
+  artist: Cecily Brown
+  date: "2002"
+  frame_class: is-large
+  alt: "Cecily Brown's Black Painting 2, a reclining pale figure set against a dense black field."
+- image: assets/img/art/cezanne_still_life_skull.jpeg
+  title: Still Life with Skull
+  artist: Paul Cezanne
+  date: "1890-1893"
+  frame_class: is-wide is-raised
+  alt: "Paul Cezanne's Still Life with Skull, with fruit, a skull, and a white cloth on a table."
+- image: assets/img/art/matisse_jazz.avif
+  title: Jazz
+  artist: Henri Matisse
+  date: "1947"
+  frame_class: is-medium
+  alt: "Henri Matisse's Jazz, a portfolio of bold pochoir cut-out compositions."
+- image: assets/img/art/okeefe_blackcross.jpg
+  title: Black Cross with Stars and Blue
+  artist: Georgia O'Keeffe
+  date: "1929"
+  frame_class: is-tall is-offset
+  alt: "Georgia O'Keeffe's Black Cross with Stars and Blue, a black cross before blue mountains and a starry sky."
+- image: https://images.squarespace-cdn.com/content/v1/5702ab9d746fb9634796c9f9/1513358262020-ORH1Y1HSYFXJO9MASCJE/Basque+Slip+by+Peter+Pan%2C+1955.jpg?format=2500w
+  title: Basque Slip by Peter Pan
+  artist: Lillian Bassman
+  date: "1955"
+  frame_class: is-small is-offset
+  alt: "Lillian Bassman's photograph of a model wearing Basque Slip by Peter Pan, 1955."

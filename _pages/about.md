@@ -6,8 +6,6 @@ subtitle: Becker-Friedman Institute at the University of Chicago
 
 profile:
   align: right
-  image: headshot.jpg
-  image_circular: false # crops the image to make it circular
   more_info: >
     <p>Chicago, USA</p>
     <p><a href="mailto:jack.mulq@icloud.com">jack.mulq@icloud.com</a></p>
