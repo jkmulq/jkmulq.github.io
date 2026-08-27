@@ -2,7 +2,6 @@
 layout: page
 title: art
 permalink: /things-i-like/art/
-description: A small gallery wall of art I keep coming back to.
 nav: false
 ---
 
@@ -14,6 +13,7 @@ nav: false
   </p>
 
   <div class="art-wall">
+    <div class="art-row art-row-top">
     {% for work in art %}
       {% assign frame_class = work.frame_class | default: 'is-medium' %}
       {% if work.image contains '://' %}
@@ -33,7 +33,12 @@ nav: false
           {% endif %}
         </figcaption>
       </figure>
+      {% if forloop.index == 3 %}
+    </div>
+    <div class="art-row art-row-bottom">
+      {% endif %}
     {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -42,24 +47,40 @@ nav: false
     margin-top: 1.25rem;
   }
 
+  .post-description:empty {
+    display: none;
+  }
+
   .art-gallery-intro {
     color: var(--global-text-color-light);
     max-width: 42rem;
   }
 
   .art-wall {
-    align-items: start;
     background:
       linear-gradient(90deg, color-mix(in srgb, var(--jkm-flash) 7%, transparent) 0 1px, transparent 1px 100%),
       linear-gradient(180deg, color-mix(in srgb, var(--jkm-flash) 5%, transparent) 0 1px, transparent 1px 100%),
       linear-gradient(180deg, #211f19 0%, #12110e 100%);
     background-size: 5rem 5rem, 5rem 5rem, 100% 100%;
-    display: grid;
-    gap: 1.45rem 1.65rem;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 1.3vw, 1rem);
     margin: 2.5rem -2rem 0;
-    padding: 3rem 2.4rem 3.5rem;
+    padding: clamp(1.4rem, 3.5vw, 2.5rem);
+  }
+
+  .art-row {
+    display: flex;
+    gap: clamp(0.75rem, 1.3vw, 1rem);
+    width: 100%;
+  }
+
+  .art-row-top {
+    min-height: clamp(12rem, 27vw, 19rem);
+  }
+
+  .art-row-bottom {
+    min-height: clamp(20rem, 46vw, 34rem);
   }
 
   .art-frame {
@@ -76,7 +97,7 @@ nav: false
   .art-frame img {
     display: block;
     filter: contrast(1.04) saturate(0.92);
-    height: auto;
+    height: 100%;
     object-fit: contain;
     width: 100%;
   }
@@ -119,70 +140,52 @@ nav: false
   }
 
   .art-frame.is-small {
-    grid-column: span 4;
-    width: 94%;
+    --art-ratio: 1;
   }
 
   .art-frame.is-medium {
-    grid-column: span 4;
-    margin-left: 1.25rem;
-    margin-top: -1.2rem;
-    width: 92%;
+    --art-ratio: 1;
   }
 
   .art-frame.is-tall {
-    grid-column: span 4;
-    margin-top: -0.3rem;
-    width: 100%;
+    --art-ratio: 0.767;
   }
 
   .art-frame.is-wide {
-    grid-column: span 6;
-    margin-top: 3rem;
-    width: 100%;
+    --art-ratio: 1.205;
   }
 
   .art-frame.is-large {
-    grid-column: span 6;
-    width: 100%;
+    --art-ratio: 0.862;
   }
 
   .art-frame.is-bassman {
-    grid-column: span 4;
-    margin-left: 0.6rem;
-    margin-top: -1rem;
-    width: 100%;
+    --art-ratio: 0.872;
+    flex-grow: 1.08;
   }
 
-  .art-frame.is-offset {
-    margin-top: 1.4rem;
-  }
-
-  .art-frame.is-raised {
-    margin-bottom: 0.8rem;
+  .art-row .art-frame {
+    align-self: stretch;
+    flex: var(--art-ratio) 1 0;
+    height: auto;
+    min-width: 0;
   }
 
   @media (max-width: 900px) {
     .art-wall {
       gap: 1.25rem;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
       margin-left: 0;
       margin-right: 0;
       padding: 1.4rem;
     }
 
-    .art-frame.is-small,
-    .art-frame.is-medium,
-    .art-frame.is-tall,
-    .art-frame.is-wide,
-    .art-frame.is-large,
-    .art-frame.is-bassman {
-      grid-column: span 3;
-      height: auto;
-      margin-left: 0;
-      margin-bottom: 0;
-      margin-top: 0;
-      width: 100%;
+    .art-row {
+      gap: 1.25rem;
+    }
+
+    .art-row-top,
+    .art-row-bottom {
+      min-height: 0;
     }
   }
 
@@ -190,6 +193,10 @@ nav: false
     .art-wall {
       display: block;
       padding: 0.75rem;
+    }
+
+    .art-row {
+      display: block;
     }
 
     .art-frame {

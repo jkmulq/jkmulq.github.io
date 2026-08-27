@@ -13,7 +13,7 @@ nav_order: 3
     
   </p>
 
-  <div class="letterboxd-status" data-letterboxd-status>Loading Letterboxd highlights...</div>
+  <div class="letterboxd-status" data-letterboxd-status hidden>Loading Letterboxd highlights...</div>
 
   <div class="letterboxd-grid" hidden>
     <section class="letterboxd-panel">
@@ -347,7 +347,8 @@ nav_order: 3
         highRatedList.appendChild(empty);
       }
 
-      status.textContent = `Showing ${films.length} rated entries from the public Letterboxd RSS snapshot.`;
+      status.textContent = "";
+      status.hidden = true;
       grid.hidden = false;
     };
 
@@ -363,6 +364,7 @@ nav_order: 3
         render(data.items);
       })
       .catch((error) => {
+        status.hidden = false;
         status.textContent = "Could not load Letterboxd highlights right now. The public profile link above still works.";
         console.error("Letterboxd highlights failed:", error);
       });
