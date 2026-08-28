@@ -15,11 +15,6 @@ nav_order: 3
 
   <div class="letterboxd-grid" hidden>
     <section class="letterboxd-panel">
-      <h2>ratings</h2>
-      <div class="letterboxd-histogram" data-letterboxd-distribution></div>
-    </section>
-
-    <section class="letterboxd-panel">
       <h2>movies i really liked recently</h2>
       <div class="letterboxd-movie-grid" data-letterboxd-high-rated-list></div>
     </section>
@@ -52,43 +47,6 @@ nav_order: 3
     color: var(--letterboxd-muted);
     font-size: 0.9rem;
     margin-bottom: 0.9rem;
-  }
-
-  .letterboxd-histogram {
-    align-items: end;
-    border-bottom: 1px solid var(--global-divider-color);
-    display: grid;
-    gap: 0.45rem;
-    grid-template-columns: repeat(10, minmax(0, 1fr));
-    min-height: 14rem;
-    overflow: visible;
-    padding-top: 1rem;
-  }
-
-  .letterboxd-bin {
-    align-items: center;
-    display: grid;
-    gap: 0.35rem;
-    grid-template-rows: 1.5rem minmax(2px, 1fr) 2.4rem;
-    height: 100%;
-    justify-items: center;
-    min-width: 0;
-  }
-
-  .letterboxd-bin-count,
-  .letterboxd-bin-label {
-    color: var(--letterboxd-muted);
-    font-size: 0.8rem;
-    text-align: center;
-  }
-
-  .letterboxd-bin-bar {
-    align-self: end;
-    background: var(--letterboxd-accent);
-    border-radius: 4px 4px 0 0;
-    min-height: 2px;
-    min-width: 2px;
-    width: 100%;
   }
 
   .letterboxd-movie-grid {
@@ -153,15 +111,6 @@ nav_order: 3
     .letterboxd-grid {
       grid-template-columns: 1fr;
     }
-
-    .letterboxd-histogram {
-      gap: 0.3rem;
-      min-height: 11rem;
-    }
-
-    .letterboxd-bin-label {
-      font-size: 0.72rem;
-    }
   }
 </style>
 
@@ -172,10 +121,8 @@ nav_order: 3
 
     const username = root.dataset.letterboxdUsername;
     const grid = root.querySelector(".letterboxd-grid");
-    const distributionEl = root.querySelector("[data-letterboxd-distribution]");
     const highRatedList = root.querySelector("[data-letterboxd-high-rated-list]");
 
-    const ratingLabels = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
     const rssUrl = `https://letterboxd.com/${username}/rss/`;
     const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
@@ -293,33 +240,6 @@ nav_order: 3
       });
     };
 
-    const renderDistribution = (films) => {
-      const counts = new Map(ratingLabels.map((rating) => [rating, 0]));
-      films.forEach((film) => counts.set(film.rating, (counts.get(film.rating) || 0) + 1));
-
-      const maxCount = Math.max(...counts.values(), 1);
-      distributionEl.replaceChildren();
-
-      ratingLabels.forEach((rating) => {
-        const count = counts.get(rating) || 0;
-        const bin = document.createElement("div");
-        const label = document.createElement("span");
-        const bar = document.createElement("span");
-        const value = document.createElement("span");
-
-        bin.className = "letterboxd-bin";
-        value.className = "letterboxd-bin-count";
-        bar.className = "letterboxd-bin-bar";
-        label.className = "letterboxd-bin-label";
-        bar.style.height = `${(count / maxCount) * 100}%`;
-        label.textContent = ratingText(rating);
-        value.textContent = count;
-
-        bin.append(value, bar, label);
-        distributionEl.appendChild(bin);
-      });
-    };
-
     const render = (items) => {
       const films = items.map(normalizeItem).filter((film) => film.rating !== null);
       const highRatedFilms = films.filter((film) => film.rating >= 4.5);
@@ -328,7 +248,6 @@ nav_order: 3
         throw new Error("No rated films found in the RSS feed.");
       }
 
-      renderDistribution(films);
       highRatedList.replaceChildren();
 
       if (highRatedFilms.length) {

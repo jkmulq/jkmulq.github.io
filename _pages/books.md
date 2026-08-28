@@ -8,12 +8,6 @@ nav: false
 ---
 
 {% assign books_data = site.data.things_i_like_books %}
-{% assign max_count = 1 %}
-{% for bin in books_data.histogram %}
-  {% if bin.count > max_count %}
-    {% assign max_count = bin.count %}
-  {% endif %}
-{% endfor %}
 
 <section class="things-books-page">
   <p>
@@ -21,20 +15,6 @@ nav: false
   </p>
 
   <div class="things-books-grid">
-    <section class="things-books-panel">
-      <h2>Rating histogram</h2>
-      <div class="things-books-histogram">
-        {% for bin in books_data.histogram %}
-          {% assign height = bin.count | times: 100 | divided_by: max_count %}
-          <div class="things-books-bin">
-            <span class="things-books-bin-count">{{ bin.count }}</span>
-            <span class="things-books-bin-bar" style="height: {{ height }}%"></span>
-            <span class="things-books-bin-label">{{ bin.label }} / 5</span>
-          </div>
-        {% endfor %}
-      </div>
-    </section>
-
     <section class="things-books-panel">
       <h2>Top five books</h2>
       {% if books_data.top_books.size > 0 %}
@@ -87,45 +67,9 @@ nav: false
     margin-bottom: 0.35rem;
   }
 
-  .things-books-histogram {
-    align-items: end;
-    border-bottom: 1px solid var(--global-divider-color);
-    display: grid;
-    gap: 0.45rem;
-    grid-template-columns: repeat(10, minmax(0, 1fr));
-    min-height: 14rem;
-    overflow: visible;
-    padding-top: 1rem;
-  }
-
-  .things-books-bin {
-    align-items: center;
-    display: grid;
-    gap: 0.35rem;
-    grid-template-rows: 1.5rem minmax(2px, 1fr) 2.4rem;
-    height: 100%;
-    justify-items: center;
-    min-width: 0;
-  }
-
-  .things-books-bin-count,
-  .things-books-bin-label,
   .things-books-meta {
     color: var(--things-books-muted);
     font-size: 0.85rem;
-  }
-
-  .things-books-bin-label {
-    text-align: center;
-  }
-
-  .things-books-bin-bar {
-    align-self: end;
-    background: var(--things-books-accent);
-    border-radius: 4px 4px 0 0;
-    min-height: 2px;
-    min-width: 2px;
-    width: 100%;
   }
 
   .things-books-card-grid {
@@ -180,15 +124,6 @@ nav: false
   @media (max-width: 700px) {
     .things-books-grid {
       grid-template-columns: 1fr;
-    }
-
-    .things-books-histogram {
-      gap: 0.3rem;
-      min-height: 11rem;
-    }
-
-    .things-books-bin-label {
-      font-size: 0.72rem;
     }
   }
 </style>
