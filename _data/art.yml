@@ -34,3 +34,9 @@
   date: "1948/49"
   frame_class: is-dekooning
   alt: "Willem de Kooning's Untitled, 1948/49, an abstract black-and-white work at the Art Institute of Chicago."
+- image: assets/img/art/lee_miller_fire_masks.jpg
+  title: Fire Masks, 21 Downshire Hill
+  artist: Lee Miller
+  date: "1941"
+  frame_class: is-medium
+  alt: "Lee Miller's Fire Masks, 21 Downshire Hill, London, England 1941, showing two women wearing wartime fire masks."
