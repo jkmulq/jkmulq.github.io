@@ -10,7 +10,7 @@ nav: false
     <div>
       <h2>music i like</h2>
     </div>
-    <div class="records-count"><span id="records-counter">1 / 5</span></div>
+    <div class="records-count"><span id="records-counter">1 / 6</span></div>
   </header>
 
   <div class="records-layout">
@@ -584,6 +584,19 @@ nav: false
         coverCredit: "eBay listing image",
         youtubeId: "rQkNYAmJyE0",
         youtubeTitle: "Tijuana Moods (Complete Album)"
+      },
+      {
+        artist: "Surprise Chef",
+        title: "Superb",
+        year: "2025",
+        label: "Big Crown Records / College Of Knowledge Records",
+        format: "LP, album, limited edition, stereo",
+        style: "Soul / psychedelic funk",
+        discogs: "https://www.discogs.com/master/3843831-Surprise-Chef-Superb",
+        cover: "https://archive.org/download/mbid-faee04ad-fcad-4be5-a0c0-d6791bc709da/mbid-faee04ad-fcad-4be5-a0c0-d6791bc709da-42588861548_thumb500.jpg",
+        coverCredit: "Cover Art Archive",
+        youtubeId: "IuDDRK-rLXU",
+        youtubeTitle: "Sleep Dreams"
       }
     ];
 
@@ -619,8 +632,32 @@ nav: false
       return Math.min(max, Math.max(min, value));
     }
 
+    function wrapIndex(value) {
+      return ((value % records.length) + records.length) % records.length;
+    }
+
     function nearestIndex() {
-      return clamp(Math.round(active), 0, records.length - 1);
+      return wrapIndex(Math.round(active));
+    }
+
+    function circularOffset(index) {
+      let offset = index - active;
+      const half = records.length / 2;
+      while (offset > half) offset -= records.length;
+      while (offset < -half) offset += records.length;
+      return offset;
+    }
+
+    function nearestActiveValueFor(index) {
+      const cycle = Math.round((active - index) / records.length);
+      const candidates = [
+        index + (cycle - 1) * records.length,
+        index + cycle * records.length,
+        index + (cycle + 1) * records.length
+      ];
+      return candidates.reduce((nearest, candidate) => (
+        Math.abs(candidate - active) < Math.abs(nearest - active) ? candidate : nearest
+      ));
     }
 
     function metaMarkup(record) {
@@ -657,14 +694,14 @@ nav: false
     function renderStack() {
       const front = nearestIndex();
       document.querySelectorAll(".records-record").forEach((button, index) => {
-        const offset = index - active;
+        const offset = circularOffset(index);
         const depth = Math.abs(offset);
         const isFront = index === front;
-        const x = offset * 120 - 160;
+        const x = offset * 132 - 160 + (offset > 0 ? 28 : 0);
         const y = depth * 17 + (isFront ? -22 : 0);
         const rotate = offset * -5.8 + (index % 2 ? 1.4 : -1.8);
         const scale = clamp(1 - depth * 0.045, 0.78, 1.04);
-        const z = 60 - Math.round(depth * 5);
+        const z = 60 - Math.round(depth * 5) + (offset > 0 ? 1 : 0);
         const opacity = depth > 4 ? 0 : clamp(1 - depth * 0.12, 0.42, 1);
         button.classList.toggle("is-front", isFront);
         button.style.zIndex = String(z);
@@ -676,9 +713,12 @@ nav: false
     }
 
     function setActive(value, snap = true) {
-      active = clamp(value, 0, records.length - 1);
-      if (snap) active = Math.round(active);
+      active = snap ? Math.round(value) : value;
       renderStack();
+    }
+
+    function setActiveIndex(index) {
+      setActive(nearestActiveValueFor(index));
     }
 
     function openFocused(index = nearestIndex()) {
@@ -709,7 +749,7 @@ nav: false
         .filter(Boolean);
 
       if (!candidates.length) return null;
-      candidates.sort((a, b) => a.distance - b.distance || b.zIndex - a.zIndex);
+      candidates.sort((a, b) => b.zIndex - a.zIndex || a.distance - b.distance);
       return candidates[0].index;
     }
 
@@ -757,7 +797,7 @@ nav: false
       if (didDrag) return;
       const clickedIndex = recordIndexFromPoint(event.clientX, event.clientY);
       if (clickedIndex === null) return;
-      setActive(clickedIndex);
+      setActiveIndex(clickedIndex);
     });
 
     stage.addEventListener("wheel", (event) => {
